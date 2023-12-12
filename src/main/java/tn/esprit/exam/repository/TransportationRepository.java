@@ -1,6 +1,6 @@
 package tn.esprit.exam.repository;
 
-import com.example.microservice.entities.Transportation;
+import tn.esprit.exam.entities.Transportation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TransportationRepository extends JpaRepository<Transportation, Long> {

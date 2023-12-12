@@ -1,7 +1,7 @@
 package tn.esprit.exam.services;
 
-import com.example.microservice.entities.TransportBooking;
-import com.example.microservice.repository.TransportBookingRepository;
+import tn.esprit.exam.entities.TransportBooking;
+import tn.esprit.exam.repository.TransportBookingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,7 +1,7 @@
 package tn.esprit.exam.controllers;
 
-import com.example.microservice.entities.TransportBooking;
-import com.example.microservice.services.TransportBookingService;
+import tn.esprit.exam.entities.TransportBooking;
+import tn.esprit.exam.services.TransportBookingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,6 +1,6 @@
 package tn.esprit.exam.repository;
 
-import com.example.microservice.entities.TransportBooking;
+import tn.esprit.exam.entities.TransportBooking;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
