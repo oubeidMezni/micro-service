@@ -20,7 +20,7 @@ public class ControllerEvent {
     IserviceEvent iserviceEvent;
 
     @GetMapping("")
-    public List<Event> getChambers() {
+    public List<Event> getEvents() {
         List<Event> listEvents = iserviceEvent.retrieveAllEvents();
         return listEvents;
     }

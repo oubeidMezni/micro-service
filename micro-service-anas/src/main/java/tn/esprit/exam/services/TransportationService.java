@@ -1,5 +1,7 @@
 package tn.esprit.exam.services;
 
+
+
 import tn.esprit.exam.entities.Transportation;
 import tn.esprit.exam.repository.TransportationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +11,11 @@ import java.util.List;
 
 @Service
 public class TransportationService {
+
     @Autowired
     private TransportationRepository transportationRepository;
+     @Autowired
+     private final EventServiceClient eventServiceClient;
 
     public List<Transportation> getAllTransportations() {
         return transportationRepository.findAll();

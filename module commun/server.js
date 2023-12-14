@@ -10,6 +10,7 @@ const client = new MongoClient(uri);
 // Database and collection names
 const dbName = 'db';
 const collectionName = 'hebergement';
+const {eureka} = require('./eureka')
 // Middleware for parsing JSON bodies
 app.use(express.json());
 
@@ -17,40 +18,7 @@ app.listen(port, () => {
   console.log(`Express server listening at http://localhost:${port}`);
 });
 
-const eureka = new Eureka({
-  instance: {
-    app: 'Hebergement', // Change this to your service name
-    hostName: 'localhost', // Change this to your server's hostname
-    ipAddr: '127.0.0.1', // Change this to your server's IP address
-    port: {
-      '$': 3000,
-      '@enabled': 'true',
-    },
-    vipAddress: 'Hebergement', // Change this to your service name
-    dataCenterInfo: {
-      '@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo',
-      name: 'MyOwn',
-    },
-    registerWithEureka: true,
-    fetchRegistry: true,
-  },
-  eureka: {
-    host: 'localhost', // Change this to your Eureka server's hostname
-    port: 8761, // Change this to your Eureka server's port
-    servicePath: '/eureka/apps',
-  },
-});
-
-eureka.logger.level('debug');
-
-eureka.start(error => {
-  if (error) {
-    console.log('Eureka registration failed:', error);
-  } else {
-    console.log('Registered with Eureka');
-  }
-});
-
+eureka('hebergement',3005)
 // Create a new hebergament
 app.post('/api/hebergement', async (req, res) => {
   try {

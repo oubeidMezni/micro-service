@@ -12,6 +12,8 @@ import java.util.List;
 public class ServiceEvent  implements IserviceEvent{
     @Autowired
     RepositoryEvent repositoryEvent;
+
+
     public Event addEvent(Event event){
 Event e= repositoryEvent.save(event);
 return e;
