@@ -25,4 +25,5 @@ public class Config {
                         .uri("http://localhost:3000"))
                 .build();
     }
+
 }

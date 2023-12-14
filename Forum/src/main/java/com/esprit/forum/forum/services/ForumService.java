@@ -11,8 +11,7 @@ import java.util.List;
 public class ForumService {
     @Autowired
     private ForumRepository forumRepository;
-    @Autowired
-    private EventServiceClient e;
+
     public List<Forum> getAll(){
         return forumRepository.findAll();
     }

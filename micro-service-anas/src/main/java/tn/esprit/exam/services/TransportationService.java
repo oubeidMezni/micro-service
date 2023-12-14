@@ -2,6 +2,9 @@ package tn.esprit.exam.services;
 
 
 
+
+import tn.esprit.evenemnts.Entites.Event;
+import tn.esprit.evenemnts.Service.EventServiceClient;
 import tn.esprit.exam.entities.Transportation;
 import tn.esprit.exam.repository.TransportationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,10 +17,16 @@ public class TransportationService {
 
     @Autowired
     private TransportationRepository transportationRepository;
-     @Autowired
-     private final EventServiceClient eventServiceClient;
 
+
+    /**@Autowired
+     private  EventServiceClient eventServiceClient;
+
+     public List<Event> getEvents(){
+         return eventServiceClient.getEvents();
+     }**/
     public List<Transportation> getAllTransportations() {
+
         return transportationRepository.findAll();
     }
 
